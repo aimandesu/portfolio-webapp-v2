@@ -1,6 +1,5 @@
 import "./App.css";
 import "./index.css";
-import { Button } from "./components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import Profile from "./pages/Profile";
 import Resume from "./pages/Resume";

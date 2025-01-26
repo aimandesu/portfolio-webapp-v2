@@ -12,16 +12,7 @@ import {
   ChartData,
 } from "chart.js";
 import HorizontalTimeline from "@/components/custom/timeline";
-import BiographySection from "./Biography";
 import Biography from "./Biography";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { projects } from "@/services/data";
 import ProjectGallery from "@/components/custom/ProjectGallery";
 import { Button } from "@/components/ui/button";
 
@@ -80,7 +71,7 @@ export const options = {
 };
 
 const Profile = () => {
-  const { profile, setProfile, isEditing } = useProfileStore();
+  const { profile, setProfile } = useProfileStore();
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["profile"],
