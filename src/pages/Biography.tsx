@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 interface StatProps {
@@ -96,7 +97,7 @@ const Biography: React.FC = () => {
                 value={`${bioData.stats.projects}+`}
                 label="Projects Completed"
               />
-              <StatCard value={bioData.stats.awards} label="Get Awards" />
+              {/* <StatCard value={bioData.stats.awards} label="Get Awards" /> */}
             </div>
           </div>
         </div>

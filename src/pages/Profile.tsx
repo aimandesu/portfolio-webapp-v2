@@ -14,6 +14,16 @@ import {
 import HorizontalTimeline from "@/components/custom/timeline";
 import BiographySection from "./Biography";
 import Biography from "./Biography";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { projects } from "@/services/data";
+import ProjectGallery from "@/components/custom/ProjectGallery";
+import { Button } from "@/components/ui/button";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -78,6 +88,10 @@ const Profile = () => {
     retry: 2,
   });
 
+  const openPDF = (location: string) => {
+    window.open(location, "_blank");
+  };
+
   React.useEffect(() => {
     if (data) {
       setProfile(data);
@@ -97,14 +111,14 @@ const Profile = () => {
 
   return (
     <div className="p-4 md:p-10">
-      <div className="relative flex w-full min-h-[500px] gap-8 max-lg:flex-col-reverse justify-between items-center">
+      <div className="relative flex w-full min-h-[500px] gap-8 max-lg:flex-col-reverse overflow-x-hidden justify-between items-center">
         <div className="flex flex-col w-full space-y-4">
           {/* Heading Section */}
           <div className="space-y-2">
-            <h1 className="text-2xl font-bold truncate sm:text-3xl lg:text-4xl text-card">
+            <h1 className="text-2xl font-bold truncate sm:text-3xl lg:text-6xl text-card">
               Nice to meet you!
             </h1>
-            <h1 className="text-2xl font-bold truncate sm:text-3xllg:text-4xl text-card">
+            <h1 className="text-2xl font-bold truncate sm:text-3xl lg:text-6xl text-card">
               I'm {profile?.name}.
             </h1>
             <div className="w-20 sm:w-[80%] lg:w-[90%] bg-white h-1 my-4" />
@@ -131,6 +145,23 @@ const Profile = () => {
                     </p>
                   ))}
                 </div>
+                <div className="flex flex-col display">
+                  <Button
+                    onClick={() => openPDF("./pdf/degree.pdf")}
+                    className="lg:max-w-min"
+                    variant="outline"
+                  >
+                    View Diploma Transcript
+                  </Button>
+                  <div className="mt-5"></div>
+                  <Button
+                    onClick={() => openPDF("./pdf/diploma.pdf")}
+                    className="lg:max-w-min"
+                    variant="outline"
+                  >
+                    View Degree Transcript
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -143,10 +174,24 @@ const Profile = () => {
           alt="Profile"
         />
       </div>
+      <HorizontalTimeline />
+      <h1 className="p-6 mt-8 mb-6 text-4xl font-bold text-white md:text-5xl">
+        My Personal Project, Client and Work
+      </h1>
+      <div className="container px-4 py-8 mx-auto">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <div className="w-full">
+            <Biography />
+          </div>
+          <div className="w-full">
+            <ProjectGallery />
+          </div>
+        </div>
+      </div>
+      {/* <Biography /> */}
 
-      <Biography />
       {/* Knowledge Section */}
-      <div className="w-full p-6 mt-8 rounded-lg bg-dark">
+      {/* <div className="w-full p-6 mt-8 rounded-lg bg-dark">
         <h1 className="mb-6 text-4xl font-bold text-white md:text-5xl">
           what do I do?
         </h1>
@@ -163,8 +208,33 @@ const Profile = () => {
             </p>
           ))}
         </div>
-      </div>
-      <HorizontalTimeline />
+      </div> */}
+
+      {/* <ProjectGallery /> */}
+
+      {/* <div className="flex flex-wrap justify-center gap-2">
+        {projects.map((project, i) => (
+          <div key={i} className="w-full md:w-[30%]">
+            <Carousel>
+              <CarouselContent>
+                {project.picture.map((picture, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative w-full aspect-video">
+                      <img
+                        src={picture}
+                        alt={`Project image ${index + 1}`}
+                        className="object-cover w-full h-full rounded-lg"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+        ))}
+      </div> */}
     </div>
   );
 };

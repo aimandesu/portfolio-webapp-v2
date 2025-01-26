@@ -14,12 +14,12 @@ function App() {
           <TabsTrigger value="account" className="w-full">
             Profile
           </TabsTrigger>
-          <TabsTrigger value="portfolio" className="w-full">
+          {/* <TabsTrigger value="portfolio" className="w-full">
             Portfolio
           </TabsTrigger>
           <TabsTrigger value="resume" className="w-full">
             Resume
-          </TabsTrigger>
+          </TabsTrigger> */}
         </TabsList>
         <TabsContent value="account">
           <Profile />

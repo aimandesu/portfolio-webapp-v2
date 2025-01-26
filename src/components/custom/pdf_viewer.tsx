@@ -6,7 +6,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 import type { PDFDocumentProxy } from "pdfjs-dist";
 
 // Configure PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 interface PDFFile {
   url: string;
@@ -30,8 +30,8 @@ const PdfViewer: React.FC<PDFViewerProps> = ({ pdfFile }) => {
     }
   };
 
-  const onDocumentLoadSuccess = ({ numPages }: PDFDocumentProxy): void => {
-    setNumPages(numPages);
+  const onDocumentLoadSuccess = (pdf: PDFDocumentProxy): void => {
+    setNumPages(pdf.numPages);
   };
 
   return (
@@ -64,7 +64,6 @@ const PdfViewer: React.FC<PDFViewerProps> = ({ pdfFile }) => {
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
-
           {/* PDF Display Area */}
           <div className="flex items-center justify-center p-4 bg-white border rounded-lg">
             <Document
@@ -89,7 +88,6 @@ const PdfViewer: React.FC<PDFViewerProps> = ({ pdfFile }) => {
               />
             </Document>
           </div>
-
           {/* Page Information */}
           <div className="mt-4 text-center text-gray-600">
             Page {pageNumber} of {numPages || 0}

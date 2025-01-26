@@ -3,7 +3,7 @@ import React from "react";
 
 const Resume = () => {
   const pdfFile = {
-    url: "./degree.pdf",
+    url: "https://www.pnm.gov.my/pnm/resources/pdf%20file/PKMM/Undang-undang%20Laut%20(presentation).pdf", // Note the leading slash for public directory
   };
 
   return <PdfViewer pdfFile={pdfFile} />;
