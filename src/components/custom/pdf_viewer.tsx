@@ -2,11 +2,6 @@ import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
-import { Document, Page, pdfjs } from "react-pdf";
-import type { PDFDocumentProxy } from "pdfjs-dist";
-
-// Configure PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 interface PDFFile {
   url: string;
@@ -30,9 +25,9 @@ const PdfViewer: React.FC<PDFViewerProps> = ({ pdfFile }) => {
     }
   };
 
-  const onDocumentLoadSuccess = (pdf: PDFDocumentProxy): void => {
-    setNumPages(pdf.numPages);
-  };
+  // const onDocumentLoadSuccess = (pdf: PDFDocumentProxy): void => {
+  //   setNumPages(pdf.numPages);
+  // };
 
   return (
     <div className="min-h-screen p-4 bg-gray-50">
@@ -66,7 +61,7 @@ const PdfViewer: React.FC<PDFViewerProps> = ({ pdfFile }) => {
           </div>
           {/* PDF Display Area */}
           <div className="flex items-center justify-center p-4 bg-white border rounded-lg">
-            <Document
+            {/* <Document
               file={pdfFile.url}
               onLoadSuccess={() => onDocumentLoadSuccess}
               loading={
@@ -86,7 +81,7 @@ const PdfViewer: React.FC<PDFViewerProps> = ({ pdfFile }) => {
                 renderAnnotationLayer={false}
                 renderTextLayer={false}
               />
-            </Document>
+            </Document> */}
           </div>
           {/* Page Information */}
           <div className="mt-4 text-center text-gray-600">
