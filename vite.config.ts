@@ -3,9 +3,10 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  base: "/portfolio-webapp-v2",
   plugins: [react()],
   optimizeDeps: {
-    include: ["react-pdf", "pdfjs-dist/build/pdf.worker.min.js"],
+    include: ["react-pdf"],
   },
   resolve: {
     alias: {
