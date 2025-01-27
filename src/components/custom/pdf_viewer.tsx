@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 interface PDFFile {
   url: string;
@@ -11,8 +11,9 @@ type PDFViewerProps = {
   pdfFile: PDFFile;
 };
 
-const PdfViewer: React.FC<PDFViewerProps> = ({ pdfFile }) => {
-  const [numPages, setNumPages] = useState<number | null>(null);
+const PdfViewer: React.FC<PDFViewerProps> = () => {
+  //{ pdfFile }
+  const [numPages] = useState<number | null>(null); //setNumPages
   const [pageNumber, setPageNumber] = useState<number>(1);
 
   const goToPrevPage = (): void => {
