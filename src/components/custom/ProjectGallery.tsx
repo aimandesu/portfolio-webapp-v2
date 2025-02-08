@@ -64,7 +64,8 @@ const ProjectGallery: React.FC = () => {
         className={`
           w-full md:w-[70%] lg:w-[75%] p-4 flex flex-col 
           ${
-            selectedProject?.project === ProjectType.Mobile
+            selectedProject?.project === ProjectType.Mobile ||
+            selectedProject?.project === ProjectType.Work
               ? "items-center justify-center"
               : "items-start"
           }
@@ -75,7 +76,8 @@ const ProjectGallery: React.FC = () => {
             className={`
               bg-white shadow-lg rounded-lg overflow-hidden
               ${
-                selectedProject.project === ProjectType.Mobile
+                selectedProject?.project === ProjectType.Mobile ||
+                selectedProject?.project === ProjectType.Work
                   ? "w-[300px] max-w-[90%]"
                   : "w-full"
               }
@@ -94,7 +96,8 @@ const ProjectGallery: React.FC = () => {
                         className={`
                           object-cover w-full h-full
                           ${
-                            selectedProject.project === ProjectType.Mobile
+                            selectedProject?.project === ProjectType.Mobile ||
+                            selectedProject?.project === ProjectType.Work
                               ? "object-contain"
                               : "object-cover"
                           }
