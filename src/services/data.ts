@@ -52,6 +52,28 @@ export const projects: ProjectData[] = [
     ],
   },
   {
+    project: ProjectType.Mobile,
+    name: "Mosque Moments",
+    picture: [
+      "./Images/Mobile/MosqueMoment/1.png",
+      "./Images/Mobile/MosqueMoment/2.png",
+      "./Images/Mobile/MosqueMoment/3.png",
+      "./Images/Mobile/MosqueMoment/4.png",
+      "./Images/Mobile/MosqueMoment/5.png",
+      "./Images/Mobile/MosqueMoment/6.png",
+      "./Images/Mobile/MosqueMoment/7.png",
+      "./Images/Mobile/MosqueMoment/8.png",
+      "./Images/Mobile/MosqueMoment/9.png",
+      "./Images/Mobile/MosqueMoment/10.png",
+      "./Images/Mobile/MosqueMoment/11.png",
+      "./Images/Mobile/MosqueMoment/12.png",
+      "./Images/Mobile/MosqueMoment/13.png",
+      "./Images/Mobile/MosqueMoment/14.png",
+      "./Images/Mobile/MosqueMoment/15.png",
+      "./Images/Mobile/MosqueMoment/16.png",
+    ],
+  },
+  {
     project: ProjectType.Web,
     name: "FYP Natural Hazard Web",
     picture: [
