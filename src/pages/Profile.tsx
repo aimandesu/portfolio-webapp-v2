@@ -169,16 +169,16 @@ const Profile = () => {
       <h1 className="p-6 mt-8 mb-6 text-4xl font-bold text-white md:text-5xl">
         My Personal Project, Client and Work
       </h1>
-      <div className="container px-4 py-8 mx-auto">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <div className="w-full">
-            <Biography />
-          </div>
-          <div className="w-full">
-            <ProjectGallery />
-          </div>
+      {/* <div className="container px-4 py-8 mx-auto"> */}
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="w-full">
+          <Biography />
+        </div>
+        <div className="w-full">
+          <ProjectGallery />
         </div>
       </div>
+      {/* </div> */}
       {/* <Biography /> */}
 
       {/* Knowledge Section */}
