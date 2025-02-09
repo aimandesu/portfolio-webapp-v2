@@ -179,7 +179,6 @@ const Profile = () => {
         </div>
       </div>
       {/* </div> */}
-      {/* <Biography /> */}
 
       {/* Knowledge Section */}
       {/* <div className="w-full p-6 mt-8 rounded-lg bg-dark">
