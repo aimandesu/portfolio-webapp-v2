@@ -138,7 +138,7 @@ const Profile = () => {
                 </div>
                 <div className="flex flex-col display">
                   <Button
-                    onClick={() => openPDF("./pdf/degree.pdf")}
+                    onClick={() => openPDF("./pdf/diploma.pdf")}
                     className="lg:max-w-min"
                     variant="outline"
                   >
@@ -146,7 +146,7 @@ const Profile = () => {
                   </Button>
                   <div className="mt-5"></div>
                   <Button
-                    onClick={() => openPDF("./pdf/diploma.pdf")}
+                    onClick={() => openPDF("./pdf/degree.pdf")}
                     className="lg:max-w-min"
                     variant="outline"
                   >
