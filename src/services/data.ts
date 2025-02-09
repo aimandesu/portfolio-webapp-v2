@@ -113,8 +113,6 @@ export const projects: ProjectData[] = [
       "./Images/Mobile/MosqueMoment/12.png",
       "./Images/Mobile/MosqueMoment/13.png",
       "./Images/Mobile/MosqueMoment/14.png",
-      "./Images/Mobile/MosqueMoment/15.png",
-      "./Images/Mobile/MosqueMoment/16.png",
     ],
   },
   {
